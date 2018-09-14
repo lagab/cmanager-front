@@ -1,5 +1,8 @@
 <template>
   <v-container fluid grid-list-md>
+    <v-layout fluid class="purple">
+      ggg
+    </v-layout>
     <v-responsive color="primary" dark>
         <v-layout align-center>
           <v-flex text-xs-center>

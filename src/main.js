@@ -1,10 +1,10 @@
 import '@babel/polyfill';
 import Vue from 'vue';
 import './plugins/vuetify'
-import './plugins/elements'
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import './plugins/element.js'
 
 Vue.config.productionTip = false;
 
