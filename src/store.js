@@ -5,13 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-		drawer: true,
+    drawer: false,
   },
   mutations: {
-		showNavigation (state, enable) {
-			state.drawer = enable
-		},
-	},
+    showNavigation (state, enable) {
+      state.drawer = enable
+    },
+  },
   actions: {
     async toggleNavigation ({commit, state}) {
       commit("showNavigation", !state.drawer)

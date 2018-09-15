@@ -18,10 +18,10 @@ export default new Router({
       name: 'about',
       component: About,
     },
-		{
-			path: '/account',
-			name: 'account',
-			component: Account,
-		},
+    {
+      path: '/account',
+      name: 'account',
+      component: Account,
+    },
   ],
 });
