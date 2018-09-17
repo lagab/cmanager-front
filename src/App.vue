@@ -3,11 +3,6 @@
     <Navigation />
     <Toolbar />
     <v-content>
-      <v-layout fluid class="primary">
-        <v-flex text-xs-center >
-          <h3 class="display-2" >Custom Color</h3>
-        </v-flex>
-      </v-layout>
       <router-view />
     </v-content>
 

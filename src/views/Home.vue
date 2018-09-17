@@ -7,22 +7,10 @@
       </v-btn>
       <v-btn disabled>export</v-btn>
     </v-layout>
-    <v-layout align-start row>
-      <v-flex xs12 sm6 md3>
-        <v-card to="/account"
-        color="transparent"
-        class="elevation-0">
-        <v-responsive :aspect-ratio="16/9">
-          <v-card-title primary-title class="text-xs-center">
-            <div><h2 class="headline "><i class="el-icon-circle-plus-outline"></i></h2></div><br/>
-            <div class="grey--text"><b>New Projet</b></div>
-          </v-card-title>
-        </v-responsive>
-      </v-card>
-    </v-flex>
-    <v-flex xs12 sm6 md3 v-for="(o, index) in 5">
+    <v-layout align-start row wrap>
+    <v-flex xs12 sm6 md2 v-for="i in 15" key="6${i}">
       <v-card>
-        <v-responsive :aspect-ratio="16/9">
+        <v-responsive>
           <v-card-title primary-title>
             <div>
               <h3 class="headline">Projet de Test</h3>
@@ -30,10 +18,13 @@
             </div>
           </v-card-title>
           <v-card-actions class="pa-1">
-            <v-spacer></v-spacer>
+            <v-avatar v-for="i in 5" key="6${i}" size="22" class="ma-1">
+                <img src="http://api.randomuser.me/portraits/thumb/women/26.jpg" alt=" " />
+            </v-avatar>
             <v-btn icon>
               <v-icon>more_vert</v-icon>
             </v-btn>
+              <v-spacer></v-spacer>
           </v-card-actions>
         </v-responsive>
       </v-card>

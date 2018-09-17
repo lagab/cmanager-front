@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Account from './views/Account.vue';
+import Contracts from './views/Contracts.vue';
 
 Vue.use(Router);
 
@@ -23,5 +24,10 @@ export default new Router({
       name: 'account',
       component: Account,
     },
+		{
+			path: '/contracts',
+			name: 'contracts',
+			component: Contracts,
+		},
   ],
 });

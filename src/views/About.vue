@@ -1,5 +1,6 @@
 <template>
-  <v-container fluid grid-list-md>
+  <v-container fluid grid-list-md pa-0>
+    <v-container fluid grid-list-md>
     <v-responsive color="primary" dark>
       <v-layout align-center>
         <v-flex text-xs-center>
@@ -65,5 +66,6 @@
         </v-card>
       </v-flex>
     </v-layout>
+    </v-container>
   </v-container>
 </template>
