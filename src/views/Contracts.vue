@@ -50,7 +50,7 @@
         </v-flex>
       </v-layout>
     </v-responsive>
-    <v-layout >
+   <!-- <v-layout row>
       <v-data-table
               :items="desserts"
               class="elevation-1"
@@ -73,6 +73,29 @@
                   @click="handleDelete(scope.$index, props.item)">Delete</el-button></td>
         </template>
       </v-data-table>
+      <v-divider></v-divider>
+-->
+      <v-list subheader>
+        <v-subheader>Recent chat</v-subheader>
+        <v-list-tile
+                v-for="dessert in desserts"
+                :key="dessert.name"
+                avatar
+                @click=""
+        >
+          <v-list-tile-avatar>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfMEFyp_F5ns8imuaRbNjXHNlxwSD2PocWQJn4hpGFo1F-oiOgTA">
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title v-html="dessert.name">test</v-list-tile-title>
+          </v-list-tile-content>
+
+          <v-list-tile-action>
+            <v-icon :color="grey">more_vert</v-icon>
+          </v-list-tile-action>
+        </v-list-tile>
+      </v-list>
 
     </v-layout>
     </v-container>
