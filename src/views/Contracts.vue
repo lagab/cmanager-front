@@ -75,27 +75,24 @@
       </v-data-table>
       <v-divider></v-divider>
 -->
-      <v-list subheader>
-        <v-subheader>Recent chat</v-subheader>
-        <v-list-tile
-                v-for="dessert in desserts"
-                :key="dessert.name"
-                avatar
-                @click=""
-        >
-          <v-list-tile-avatar>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfMEFyp_F5ns8imuaRbNjXHNlxwSD2PocWQJn4hpGFo1F-oiOgTA">
-          </v-list-tile-avatar>
-
-          <v-list-tile-content>
-            <v-list-tile-title v-html="dessert.name">test</v-list-tile-title>
-          </v-list-tile-content>
-
-          <v-list-tile-action>
-            <v-icon :color="grey">more_vert</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-      </v-list>
+      <v-data-table
+              :headers="headers"
+              :items="desserts"
+              class="elevation-1"
+      >
+        <template slot="items" slot-scope="props">
+          <td>{{ props.item.name }}</td>
+          <td class="text-xs-right">{{ props.item.calories }}</td>
+          <td class="text-xs-right">{{ props.item.fat }}</td>
+          <td class="text-xs-right"><a href="#">{{ props.item.carbs }}</a></td>
+          <td class=""><v-chip label outline  color="teal">Confirmed</v-chip></td>
+          <td class="text-xs-right">
+            <v-icon :color="grey">visibility</v-icon>
+            <v-icon :color="grey">create</v-icon>
+            <v-icon :color="grey">delete_outline</v-icon>
+          </td>
+        </template>
+      </v-data-table>
 
     </v-layout>
     </v-container>
@@ -197,7 +194,20 @@
 						protein: 7,
 						iron: '6%'
 					}
-				]
+				],
+				headers: [
+					{
+						text: 'Dessert (100g serving)',
+						align: 'left',
+						sortable: false,
+						value: 'name'
+					},
+					{ text: 'Calories', value: 'calories' },
+					{ text: 'Fat (g)', value: 'fat' },
+					{ text: 'Carbs (g)', value: 'carbs' },
+					{ text: 'Protein (g)', value: 'protein' },
+					{ text: 'Actions', value: 'name', sortable: false }
+				],
 			}
 		}
 	}
