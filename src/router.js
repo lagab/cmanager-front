@@ -5,6 +5,7 @@ import About from './views/About.vue';
 import Account from './views/Account.vue';
 import Contracts from './views/Contracts.vue';
 import Contacts from './views/Contacts.vue';
+import Preview from './views/Preview.vue';
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
 			path: '/contacts',
 			name: 'contacts',
 			component: Contacts,
+		},
+		{
+			path: '/preview',
+			name: 'preview',
+			component: Preview,
 		},
   ],
 });

@@ -5,18 +5,6 @@
     <v-content>
       <router-view />
     </v-content>
-
-    <v-btn
-    fab
-    bottom
-    right
-    color="blue lighten-1"
-    dark
-    fixed
-    @click="dialog = !dialog"
-    >
-    <v-icon>add</v-icon>
-  </v-btn>
 </v-app>
 </template>
 

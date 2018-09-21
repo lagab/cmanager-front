@@ -78,18 +78,42 @@
       <v-data-table
               :headers="headers"
               :items="desserts"
-              class="elevation-1"
+              class="elevation-0 transparent"
       >
         <template slot="items" slot-scope="props">
           <td>{{ props.item.name }}</td>
-          <td class="text-xs-right">{{ props.item.calories }}</td>
-          <td class="text-xs-right">{{ props.item.fat }}</td>
-          <td class="text-xs-right"><a href="#">{{ props.item.carbs }}</a></td>
-          <td class=""><v-chip label outline  color="teal">Confirmed</v-chip></td>
+          <td>{{ props.item.calories }}</td>
+          <td>{{ props.item.fat }}</td>
+          <td>{{ props.item.carbs }}</td>
+          <td><v-chip label outline  color="teal">Confirmed</v-chip></td>
           <td class="text-xs-right">
-            <v-icon :color="grey">visibility</v-icon>
-            <v-icon :color="grey">create</v-icon>
-            <v-icon :color="grey">delete_outline</v-icon>
+            <v-menu bottom left>
+              <v-btn icon ripple
+                     slot="activator"
+                     dark>
+                <v-icon color="grey">more_vert</v-icon>
+              </v-btn>
+              <v-list dense>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>tv</v-icon> View</v-list-tile-title>
+                </v-list-tile>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>visibility</v-icon> Preview</v-list-tile-title>
+                </v-list-tile>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>get_app</v-icon> Download</v-list-tile-title>
+                </v-list-tile>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>gesture</v-icon> Manage Signatures</v-list-tile-title>
+                </v-list-tile>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>create</v-icon> Edit</v-list-tile-title>
+                </v-list-tile>
+                <v-list-tile @click="">
+                  <v-list-tile-title><v-icon small>delete_outline</v-icon> delete</v-list-tile-title>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
           </td>
         </template>
       </v-data-table>
@@ -99,6 +123,13 @@
   </v-container>
 </template>
 
+<style>
+  .transparent > .v-table,
+  .transparent > .v-table__overflow > .v-datatable,
+  .transparent > .v-table > .v-datatable__actions {
+    background-color: transparent;
+  }
+</style>
 <script>
 	export default {
 		data () {
@@ -202,10 +233,10 @@
 						sortable: false,
 						value: 'name'
 					},
-					{ text: 'Calories', value: 'calories' },
-					{ text: 'Fat (g)', value: 'fat' },
-					{ text: 'Carbs (g)', value: 'carbs' },
-					{ text: 'Protein (g)', value: 'protein' },
+					{ text: 'Description', value: 'description' },
+					{ text: 'Type', value: 'type' },
+					{ text: 'Carbs (g)', value: 'nb_users' },
+					{ text: 'Statut', value: 'status' },
 					{ text: 'Actions', value: 'name', sortable: false }
 				],
 			}

@@ -59,7 +59,7 @@
             </v-list-tile-avatar>
 
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ item.title }} <small>(200)</small></v-list-tile-title>
             </v-list-tile-content>
 
             <v-list-tile-action>
@@ -90,16 +90,11 @@
                   @click=""
           >
             <v-list-tile-avatar>
-              <v-badge
-                    color="blue-grey lighten-3"
-              >
-                  <v-icon>contacts</v-icon>
-                  <small slot="badge">200</small>
-              </v-badge>
+              <v-icon>contacts</v-icon>
             </v-list-tile-avatar>
 
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ item.title }} <small>(15)</small></v-list-tile-title>
             </v-list-tile-content>
 
             <v-list-tile-action>
@@ -242,7 +237,7 @@
               <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click.native="viewdialog = false">Close</v-btn>
-                  <v-btn color="blue darken-1" flat @click.native="viewdialog = false">Save</v-btn>
+                  <v-btn color="primary" @click.native="viewdialog = false">Save</v-btn>
               </v-card-actions>
           </v-card>
       </v-dialog>
